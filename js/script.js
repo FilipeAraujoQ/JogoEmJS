@@ -10,6 +10,7 @@ const jump = () => {
 }
 
 const loop = setInterval(() => {
+
     const pipePosition = pipe.offsetLeft
     const marioPosition = +window.getComputedStyle(mario).bottom.replace('px', '')
 
@@ -20,7 +21,11 @@ const loop = setInterval(() => {
         mario.style.animation = 'none'
         mario.style.bottom = `${marioPosition}px`
 
-        mario.scr = 'img/game-over.png'
+        mario.src = 'img/game-over.png'
+        mario.style.width = '75px'
+        mario.style.marinLeft = '30px'
+
+        clearInterval(loop)
     }
 }, 10)
 
